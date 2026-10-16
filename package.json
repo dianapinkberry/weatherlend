@@ -1,0 +1,19 @@
+{
+  "name": "weatherlend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Community lending prototype for extreme weather in Zurich",
+  "scripts": {
+    "db:migrate": "wrangler d1 migrations apply weatherlend-db --local",
+    "db:seed": "wrangler d1 execute weatherlend-db --local --file=seed/seed.sql",
+    "db:reset": "node scripts/reset-local-db.mjs && npm run db:migrate && npm run db:seed",
+    "setup": "npm run db:migrate && npm run db:seed",
+    "dev": "wrangler pages dev public --port 8788",
+    "db:migrate:remote": "wrangler d1 migrations apply weatherlend-db --remote",
+    "db:seed:remote": "wrangler d1 execute weatherlend-db --remote --file=seed/seed.sql",
+    "deploy": "wrangler pages deploy public --project-name weatherlend"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
