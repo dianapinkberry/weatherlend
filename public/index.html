@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weatherlend · Borrow what the weather asks for</title>
+  <meta name="description" content="Students in Zurich lend each other what they need during heat waves, cold snaps, heavy rain and storms.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#/offers" aria-label="Weatherlend home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 5.5c-2.6 3.3-3.9 5.6-3.9 7.4a3.9 3.9 0 0 0 7.8 0c0-1.8-1.3-4.1-3.9-7.4z" fill="#fff"/></svg>
+        <span>Weatherlend</span>
+      </a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Main">
+        <a href="#/offers" data-route="offers">Offers</a>
+        <a href="#/requests" data-route="requests">Requests</a>
+        <a href="#/offer" data-route="offer">Offer an item</a>
+        <a href="#/calendar" data-route="calendar">Calendar</a>
+        <label class="demo-user" title="Demo only: there is no login, pick who you are">
+          <span>Acting as</span>
+          <select id="userSelect" aria-label="Demo user"></select>
+        </label>
+        <a href="#/points" data-route="points" class="points-pill" id="pointsPill">… points</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="wrap" tabindex="-1"><p class="loading">Loading…</p></main>
+
+  <footer class="wrap foot">
+    Prototype for a student project. All names, items and point values are examples. Phenomena are data, so more can be added without code changes.
+  </footer>
+
+  <dialog id="modal"><form method="dialog" class="modal-body" id="modalBody"></form></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
